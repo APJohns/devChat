@@ -1,6 +1,9 @@
 import React from "react";
 import Message from "./Message";
 
+import smoothscroll from "smoothscroll-polyfill";
+smoothscroll.polyfill();
+
 class Messenger extends React.Component {
 	messageRef = React.createRef();
 	messageFormRef = React.createRef();
@@ -65,6 +68,12 @@ class Messenger extends React.Component {
 			});
 			this.setState({ colors });
 		}
+
+		window.scroll({
+			top: window.innerHeight + 500,
+			left: 0,
+			behavior: "smooth"
+		});
 	}
 
 	handleMessage = e => {
