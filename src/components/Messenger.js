@@ -15,11 +15,15 @@ class Messenger extends React.Component {
 			<main>
 				<section className="messages">
 					{Object.keys(this.props.messages).map(key => (
-						<p key={key}>{this.props.messages[key].message}</p>
+						<div key={key} className="message">
+							<h3>{this.props.messages[key].username}</h3>
+							<p>{this.props.messages[key].message}</p>
+						</div>
 					))}
 				</section>
 				<form ref={this.messageFormRef} onSubmit={this.handleMessage}>
-					<input type="text" ref={this.messageRef} />
+					<input type="text" ref={this.messageRef} required />
+					<button type="submit">Send</button>
 				</form>
 			</main>
 		);

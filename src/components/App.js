@@ -6,7 +6,7 @@ import Messenger from "./Messenger";
 
 class App extends Component {
 	state = {
-		username: "Ash",
+		username: null,
 		messages: {}
 	};
 

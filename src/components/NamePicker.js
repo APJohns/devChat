@@ -12,7 +12,9 @@ class NamePicker extends React.Component {
 	render() {
 		return (
 			<form ref={this.formRef} onSubmit={this.handleSubmit}>
-				<input type="text" ref={this.nameRef} />
+				<h2>Enter Your Name</h2>
+				<input type="text" ref={this.nameRef} required />
+				<button type="submit">Go</button>
 			</form>
 		);
 	}
