@@ -21,7 +21,11 @@ class Message extends React.Component {
 					{new Date(message.timestamp).getDate() ===
 					new Date().getDate()
 						? new Date(message.timestamp).toLocaleTimeString(
-								"en-US"
+								"en-US",
+								{
+									hour: "numeric",
+									minute: "numeric"
+								}
 						  )
 						: new Date(message.timestamp).toLocaleDateString(
 								"en-US",
