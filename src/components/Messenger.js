@@ -14,13 +14,13 @@ class Messenger extends React.Component {
 
 	componentDidMount() {
 		let cols = [
+			"#e67e22",
 			"#1abc9c",
+			"#f1c40f",
 			"#2ecc71",
 			"#3498db",
-			"#9b59b6",
-			"#f1c40f",
-			"#e67e22",
-			"#e74c3c"
+			"#e74c3c",
+			"#9b59b6"
 		];
 		let colors = {};
 		Object.keys(this.props.messages).forEach(msg => {
@@ -42,13 +42,13 @@ class Messenger extends React.Component {
 	componentDidUpdate(prevProps, prevState) {
 		if (prevProps.messages !== this.props.messages) {
 			let cols = [
+				"#e67e22",
 				"#1abc9c",
+				"#f1c40f",
 				"#2ecc71",
 				"#3498db",
-				"#9b59b6",
-				"#f1c40f",
-				"#e67e22",
-				"#e74c3c"
+				"#e74c3c",
+				"#9b59b6"
 			];
 			let colors = {};
 			Object.keys(this.props.messages).forEach(msg => {
@@ -69,8 +69,8 @@ class Messenger extends React.Component {
 			this.setState({ colors });
 		}
 
-		window.scroll({
-			top: window.innerHeight + 500,
+		window.scrollBy({
+			top: document.body.scrollHeight,
 			left: 0,
 			behavior: "smooth"
 		});
@@ -106,7 +106,12 @@ class Messenger extends React.Component {
 					ref={this.messageFormRef}
 					onSubmit={this.handleMessage}
 				>
-					<input type="text" ref={this.messageRef} required />
+					<input
+						type="text"
+						ref={this.messageRef}
+						placeholder="Say something..."
+						required
+					/>
 					<button type="submit">Send</button>
 				</form>
 			</main>
