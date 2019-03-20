@@ -18,6 +18,21 @@ class Messenger extends React.Component {
 						<div key={key} className="message">
 							<h3>{this.props.messages[key].username}</h3>
 							<p>{this.props.messages[key].message}</p>
+							<p>
+								{new Date(
+									this.props.messages[key].timestamp
+								).getDate() === new Date().getDate()
+									? new Date(
+											this.props.messages[key].timestamp
+									  ).toLocaleTimeString("en-US")
+									: new Date(
+											this.props.messages[key].timestamp
+									  ).toLocaleDateString("en-US", {
+											month: "short",
+											day: "numeric",
+											year: "numeric"
+									  })}
+							</p>
 						</div>
 					))}
 				</section>
