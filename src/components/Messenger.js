@@ -85,6 +85,13 @@ class Messenger extends React.Component {
 	render() {
 		return (
 			<main>
+				{Object.keys(this.props.messages).length === 0 && (
+					<p className="none">
+						Looks like nobody has said anything yet...
+						<br />
+						Break the ice! Say hello!
+					</p>
+				)}
 				<TransitionGroup component="section" className="messages">
 					{Object.keys(this.props.messages).map(key => (
 						<CSSTransition

@@ -46,6 +46,9 @@ class Rooms extends React.Component {
 				</nav>
 				<main>
 					<h2>Rooms</h2>
+					{Object.keys(this.state.rooms).length === 0 && (
+						<p>No rooms at the moment :(</p>
+					)}
 					<ul>
 						{Object.keys(this.state.rooms).map(room => (
 							<li>
