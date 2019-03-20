@@ -202,8 +202,10 @@ nav,
 
 .msg-enter {
 	transform: translateY(100%);
+	opacity: 0;
 	transition: 0.5s;
 	&.msg-enter-active {
+		opacity: 1;
 		transform: translateY(0);
 	}
 }
