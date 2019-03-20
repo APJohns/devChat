@@ -1,4 +1,5 @@
 import React from "react";
+import Message from "./Message";
 
 class Messenger extends React.Component {
 	messageRef = React.createRef();
@@ -15,25 +16,12 @@ class Messenger extends React.Component {
 			<main className="main">
 				<section className="messages">
 					{Object.keys(this.props.messages).map(key => (
-						<div key={key} className="message">
-							<h3>{this.props.messages[key].username}</h3>
-							<p>{this.props.messages[key].message}</p>
-							<p>
-								{new Date(
-									this.props.messages[key].timestamp
-								).getDate() === new Date().getDate()
-									? new Date(
-											this.props.messages[key].timestamp
-									  ).toLocaleTimeString("en-US")
-									: new Date(
-											this.props.messages[key].timestamp
-									  ).toLocaleDateString("en-US", {
-											month: "short",
-											day: "numeric",
-											year: "numeric"
-									  })}
-							</p>
-						</div>
+						<Message
+							key={key}
+							id={key}
+							messages={this.props.messages}
+							color={this.props.color}
+						/>
 					))}
 				</section>
 				<form

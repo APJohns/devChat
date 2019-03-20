@@ -1,8 +1,15 @@
 body {
 	height: 100vh;
+	font-family: "Poppins", sans-serif;
 }
 
-h1 {
+h1,
+h2,
+h3 {
+	margin: 0;
+}
+
+p {
 	margin: 0;
 }
 
@@ -34,7 +41,17 @@ nav,
 
 .message {
 	background-color: #eee;
-	height: 200px;
+	padding: 10px 15px;
+	margin-bottom: 5px;
+}
+
+.user {
+	font-weight: normal;
+}
+
+.timestamp {
+	text-align: right;
+	color: #888;
 }
 
 .sendMessage {
