@@ -1,0 +1,68 @@
+#root {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+body {
+	height: 100vh;
+}
+
+h1 {
+	margin: 0;
+}
+
+nav {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	background-color: rgba(52, 73, 94, 0.9);
+	color: #eee;
+	z-index: 10;
+}
+
+input,
+button {
+	padding: 3px 10px;
+	border: none;
+	background: none;
+}
+
+.main,
+nav,
+.sendMessage {
+	padding: 20px 5%;
+}
+
+.messages {
+	flex: 1;
+}
+
+.message {
+	background-color: #eee;
+	height: 200px;
+}
+
+.sendMessage {
+	display: flex;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	background-color: rgba(52, 73, 94, 0.9);
+
+	input {
+		flex: 4;
+		color: #eee;
+		border-bottom: 2px solid rgba(236, 240, 241, 1);
+	}
+
+	button {
+		flex: 1;
+		font-weight: bold;
+		color: #eee;
+		background-color: rgba(52, 152, 219, 1);
+		cursor: pointer;
+	}
+}

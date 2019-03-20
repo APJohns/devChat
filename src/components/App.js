@@ -6,7 +6,7 @@ import Messenger from "./Messenger";
 
 class App extends Component {
 	state = {
-		username: null,
+		username: "Ash",
 		messages: {}
 	};
 
@@ -38,8 +38,10 @@ class App extends Component {
 
 	render() {
 		return (
-			<div>
-				<h1>DevChat</h1>
+			<>
+				<nav>
+					<h1>DevChat</h1>
+				</nav>
 				{this.state.username ? (
 					<Messenger
 						messages={this.state.messages}
@@ -48,7 +50,7 @@ class App extends Component {
 				) : (
 					<NamePicker updateName={this.updateName} />
 				)}
-			</div>
+			</>
 		);
 	}
 }
