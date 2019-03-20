@@ -9,6 +9,33 @@ class Messenger extends React.Component {
 		colors: {}
 	};
 
+	componentDidMount() {
+		let cols = [
+			"#1abc9c",
+			"#2ecc71",
+			"#3498db",
+			"#9b59b6",
+			"#f1c40f",
+			"#e67e22",
+			"#e74c3c"
+		];
+		let colors = {};
+		Object.keys(this.props.messages).forEach(msg => {
+			if (!colors[this.props.messages[msg].username]) {
+				let c;
+				if (cols.length === 0) {
+					c = `rgb(${Math.floor(Math.random() * 150)}, ${Math.floor(
+						Math.random() * 150
+					)}, ${Math.floor(Math.random() * 150)})`;
+				} else {
+					c = cols.pop();
+				}
+				colors[this.props.messages[msg].username] = c;
+			}
+		});
+		this.setState({ colors });
+	}
+
 	componentDidUpdate(prevProps, prevState) {
 		if (prevProps.messages !== this.props.messages) {
 			let cols = [
