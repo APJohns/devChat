@@ -24,6 +24,13 @@ p {
 	line-height: 1.4rem;
 }
 
+ul a {
+	color: #3498db;
+	&:hover {
+		color: #9b59b6;
+	}
+}
+
 ul {
 	list-style-type: circle;
 }
@@ -198,5 +205,35 @@ nav,
 	transition: 0.5s;
 	&.msg-enter-active {
 		transform: translateY(0);
+	}
+}
+
+.newRoom {
+	margin-top: 50px;
+
+	input {
+		width: 250px;
+		border-bottom: 2px solid #34495e;
+		transition: 0.1s all ease-in-out;
+
+		&:focus {
+			border-color: #9b59b6;
+			transition: 0.1s all ease-in-out;
+		}
+	}
+
+	button {
+		background-color: #3498db;
+		color: #eee;
+		padding: 5px 15px;
+		border-radius: 5px 5px 5px 0;
+		cursor: pointer;
+		transition: 0.1s all ease-in-out;
+
+		&:hover,
+		&:active {
+			background-color: #9b59b6;
+			transition: 0.1s all ease-in-out;
+		}
 	}
 }
