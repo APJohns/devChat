@@ -29,7 +29,7 @@ class App extends Component {
 
 	sendMessage = msg => {
 		let messages = { ...this.state.messages };
-		messages[Date.now()] = {
+		messages[`${this.state.username.replace(/\s/g, "")}${Date.now()}`] = {
 			message: msg,
 			username: this.state.username
 		};
