@@ -1,9 +1,9 @@
 import React from "react";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import smoothscroll from "smoothscroll-polyfill";
 import Message from "./Message";
 
-import smoothscroll from "smoothscroll-polyfill";
 smoothscroll.polyfill();
-
 class Messenger extends React.Component {
 	messageRef = React.createRef();
 	messageFormRef = React.createRef();
@@ -85,17 +85,22 @@ class Messenger extends React.Component {
 	render() {
 		return (
 			<main className="main">
-				<section className="messages">
+				<TransitionGroup component="section" className="messages">
 					{Object.keys(this.props.messages).map(key => (
-						<Message
+						<CSSTransition
+							classNames="msg"
 							key={key}
-							id={key}
-							messages={this.props.messages}
-							colors={this.state.colors}
-							username={this.props.username}
-						/>
+							timeout={{ enter: 500, exit: 500 }}
+						>
+							<Message
+								id={key}
+								messages={this.props.messages}
+								colors={this.state.colors}
+								username={this.props.username}
+							/>
+						</CSSTransition>
 					))}
-				</section>
+				</TransitionGroup>
 				<form
 					className="sendMessage"
 					ref={this.messageFormRef}

@@ -181,3 +181,11 @@ nav,
 		}
 	}
 }
+
+.msg-enter {
+	transform: translateY(100%);
+	transition: 0.5s;
+	&.msg-enter-active {
+		transform: translateY(0);
+	}
+}
