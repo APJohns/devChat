@@ -31,7 +31,8 @@ class App extends Component {
 		let messages = { ...this.state.messages };
 		messages[`${this.state.username.replace(/\s/g, "")}${Date.now()}`] = {
 			message: msg,
-			username: this.state.username
+			username: this.state.username,
+			timestamp: Date.now()
 		};
 		this.setState({ messages });
 	};

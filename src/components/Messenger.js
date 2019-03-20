@@ -6,7 +6,7 @@ class Messenger extends React.Component {
 
 	handleMessage = e => {
 		e.preventDefault();
-		this.props.sendMessage(this.messageRef.current.value);
+		this.props.sendMessage(this.messageRef.current.value.trim());
 		this.messageFormRef.current.reset();
 	};
 
