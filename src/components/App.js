@@ -6,9 +6,8 @@ import Messenger from "./Messenger";
 
 class App extends Component {
 	state = {
-		username: null,
-		messages: {},
-		color: ""
+		username: "Johns",
+		messages: {}
 	};
 
 	componentDidMount() {
@@ -23,18 +22,8 @@ class App extends Component {
 	}
 
 	updateName = name => {
-		let colors = [
-			"#1abc9c",
-			"#2ecc71",
-			"#3498db",
-			"#9b59b6",
-			"#f1c40f",
-			"#e67e22",
-			"#e74c3c"
-		];
 		this.setState({
-			username: name,
-			color: colors[Math.floor(Math.random() * colors.length)]
+			username: name
 		});
 	};
 
@@ -58,7 +47,6 @@ class App extends Component {
 					<Messenger
 						messages={this.state.messages}
 						sendMessage={this.sendMessage}
-						color={this.state.color}
 					/>
 				) : (
 					<NamePicker updateName={this.updateName} />

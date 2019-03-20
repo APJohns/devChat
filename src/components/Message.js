@@ -5,7 +5,10 @@ class Message extends React.Component {
 		const message = this.props.messages[this.props.id];
 		return (
 			<div key={this.props.key} className="message">
-				<h3 className="user" style={{ color: this.props.color }}>
+				<h3
+					className="user"
+					style={{ color: this.props.colors[message.username] }}
+				>
 					{message.username}
 				</h3>
 				<p className="msgTxt">{message.message}</p>
