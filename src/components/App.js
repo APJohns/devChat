@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import base from "../base";
+import { Link } from "react-router-dom";
 
 import NamePicker from "./NamePicker";
 import Messenger from "./Messenger";
@@ -11,7 +12,7 @@ class App extends Component {
 	};
 
 	componentDidMount() {
-		this.ref = base.syncState(`room1/messages`, {
+		this.ref = base.syncState(`rooms/room1/messages`, {
 			context: this,
 			state: "messages"
 		});
@@ -41,7 +42,9 @@ class App extends Component {
 		return (
 			<>
 				<nav>
-					<h1>DevChat</h1>
+					<Link to="/" className="logo">
+						DevChat
+					</Link>
 					{this.state.username && (
 						<p>Welcome, {this.state.username}!</p>
 					)}
