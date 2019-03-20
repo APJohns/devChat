@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import base from "../base";
 
-class App extends Component {
-	messageRef = React.createRef();
-	messageFormRef = React.createRef();
+import NamePicker from "./NamePicker";
+import Messenger from "./Messenger";
 
+class App extends Component {
 	state = {
-		username: null,
+		username: "Ash",
 		messages: {}
 	};
 
@@ -21,29 +21,34 @@ class App extends Component {
 		base.removeBinding(this.ref);
 	}
 
-	sendMessage = e => {
-		e.preventDefault();
+	updateName = name => {
+		this.setState({
+			username: name
+		});
+	};
 
+	sendMessage = msg => {
 		let messages = { ...this.state.messages };
-		messages[Date.now()].message = this.messageRef.current.value;
+		messages[Date.now()] = {
+			message: msg,
+			username: this.state.username
+		};
 		this.setState({ messages });
-
-		this.messageFormRef.current.reset();
 	};
 
 	render() {
 		return (
-			<main>
+			<div>
 				<h1>DevChat</h1>
-				<section className="messages">
-					{Object.keys(this.state.messages).map(key => (
-						<p key={key}>{this.state.messages[key]}</p>
-					))}
-				</section>
-				<form ref={this.messageFormRef} onSubmit={this.sendMessage}>
-					<input type="text" ref={this.messageRef} />
-				</form>
-			</main>
+				{this.state.username ? (
+					<Messenger
+						messages={this.state.messages}
+						sendMessage={this.sendMessage}
+					/>
+				) : (
+					<NamePicker updateName={this.updateName} />
+				)}
+			</div>
 		);
 	}
 }
