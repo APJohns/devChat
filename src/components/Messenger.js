@@ -84,7 +84,7 @@ class Messenger extends React.Component {
 
 	render() {
 		return (
-			<main className="main">
+			<main>
 				<TransitionGroup component="section" className="messages">
 					{Object.keys(this.props.messages).map(key => (
 						<CSSTransition

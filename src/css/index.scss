@@ -24,6 +24,10 @@ p {
 	line-height: 1.4rem;
 }
 
+ul {
+	list-style-type: circle;
+}
+
 nav {
 	position: -webkit-sticky;
 	position: sticky;
@@ -55,7 +59,7 @@ button {
 	border-radius: 0;
 }
 
-.main,
+main,
 nav,
 .sendMessage {
 	padding: 20px 5%;

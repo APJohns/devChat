@@ -21,11 +21,21 @@ class Rooms extends React.Component {
 	render() {
 		return (
 			<div>
-				<ul>
-					{Object.keys(this.state.rooms).map(room => (
-						<Link to={`/rooms/${room}`}>{room}</Link>
-					))}
-				</ul>
+				<nav>
+					<Link to="/" className="logo">
+						DevChat
+					</Link>
+				</nav>
+				<main>
+					<h2>Rooms</h2>
+					<ul>
+						{Object.keys(this.state.rooms).map(room => (
+							<li>
+								<Link to={`/rooms/${room}`}>{room}</Link>
+							</li>
+						))}
+					</ul>
+				</main>
 			</div>
 		);
 	}
