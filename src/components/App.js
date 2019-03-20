@@ -6,7 +6,7 @@ import Messenger from "./Messenger";
 
 class App extends Component {
 	state = {
-		username: "Johns",
+		username: null,
 		messages: {}
 	};
 
@@ -29,7 +29,7 @@ class App extends Component {
 
 	sendMessage = msg => {
 		let messages = { ...this.state.messages };
-		messages[`${this.state.username.replace(/\s/g, "")}${Date.now()}`] = {
+		messages[`${Date.now()}${this.state.username.replace(/\s/g, "")}`] = {
 			message: msg,
 			username: this.state.username,
 			timestamp: Date.now()
@@ -47,6 +47,7 @@ class App extends Component {
 					<Messenger
 						messages={this.state.messages}
 						sendMessage={this.sendMessage}
+						username={this.state.username}
 					/>
 				) : (
 					<NamePicker updateName={this.updateName} />

@@ -56,6 +56,7 @@ class Messenger extends React.Component {
 							id={key}
 							messages={this.props.messages}
 							colors={this.state.colors}
+							username={this.props.username}
 						/>
 					))}
 				</section>

@@ -1,6 +1,9 @@
+html,
 body {
+	font-size: 16px;
 	height: 100vh;
 	font-family: "Poppins", sans-serif;
+	color: #444;
 }
 
 h1,
@@ -37,12 +40,47 @@ nav,
 
 .messages {
 	margin-bottom: 100px;
+	display: flex;
+	flex-direction: column;
 }
 
 .message {
+	width: 80%;
 	background-color: #eee;
 	padding: 10px 15px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
+	position: relative;
+	border-radius: 5px;
+}
+
+@mixin triangle() {
+	display: block;
+	content: "";
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	bottom: 12px;
+	transform: rotate(45deg);
+	background-color: #eee;
+	border-radius: 2px;
+	z-index: -1;
+}
+
+.other {
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
+	&::before {
+		@include triangle();
+		left: -12px;
+	}
+}
+
+.self {
+	align-self: flex-end;
+
+	&::after {
+		@include triangle();
+		right: -12px;
+	}
 }
 
 .user {
@@ -52,6 +90,7 @@ nav,
 .timestamp {
 	text-align: right;
 	color: #888;
+	font-size: 0.8rem;
 }
 
 .sendMessage {

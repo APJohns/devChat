@@ -4,7 +4,12 @@ class Message extends React.Component {
 	render() {
 		const message = this.props.messages[this.props.id];
 		return (
-			<div key={this.props.key} className="message">
+			<div
+				key={this.props.key}
+				className={`message ${
+					message.username === this.props.username ? "self" : "other"
+				}`}
+			>
 				<h3
 					className="user"
 					style={{ color: this.props.colors[message.username] }}
