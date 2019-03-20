@@ -42,6 +42,9 @@ class App extends Component {
 			<>
 				<nav>
 					<h1>DevChat</h1>
+					{this.state.username && (
+						<p>Welcome, {this.state.username}!</p>
+					)}
 				</nav>
 				{this.state.username ? (
 					<Messenger
