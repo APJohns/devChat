@@ -6,7 +6,9 @@ class NamePicker extends React.Component {
 
 	handleSubmit = e => {
 		e.preventDefault();
-		this.props.updateName(this.nameRef.current.value);
+		let name = this.nameRef.current.value;
+		name = name.trim();
+		this.props.updateName(name);
 	};
 
 	render() {
