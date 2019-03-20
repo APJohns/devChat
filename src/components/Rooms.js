@@ -41,7 +41,7 @@ class Rooms extends React.Component {
 			<div>
 				<nav>
 					<Link to="/" className="logo">
-						DevChat
+						Convo / Coffee
 					</Link>
 				</nav>
 				<main>

@@ -46,7 +46,7 @@ class App extends Component {
 			<>
 				<nav>
 					<Link to="/" className="logo">
-						DevChat
+						Convo / Coffee
 					</Link>
 					{this.state.username && (
 						<p>Welcome, {this.state.username}!</p>
