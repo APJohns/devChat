@@ -12,10 +12,13 @@ class App extends Component {
 	};
 
 	componentDidMount() {
-		this.ref = base.syncState(`rooms/room1/messages`, {
-			context: this,
-			state: "messages"
-		});
+		this.ref = base.syncState(
+			`rooms/${this.props.match.params.roomId}/messages`,
+			{
+				context: this,
+				state: "messages"
+			}
+		);
 	}
 
 	componentWillUnmount() {
