@@ -1,18 +1,31 @@
 import React, { Component } from "react";
+import base from "../base";
 
 class App extends Component {
 	messageRef = React.createRef();
 	messageFormRef = React.createRef();
 
 	state = {
+		username: null,
 		messages: {}
 	};
+
+	componentDidMount() {
+		this.ref = base.syncState(`room1/messages`, {
+			context: this,
+			state: "messages"
+		});
+	}
+
+	componentWillUnmount() {
+		base.removeBinding(this.ref);
+	}
 
 	sendMessage = e => {
 		e.preventDefault();
 
 		let messages = { ...this.state.messages };
-		messages[Date.now()] = this.messageRef.current.value;
+		messages[Date.now()].message = this.messageRef.current.value;
 		this.setState({ messages });
 
 		this.messageFormRef.current.reset();
