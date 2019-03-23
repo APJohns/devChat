@@ -53,7 +53,7 @@ class Rooms extends React.Component {
 					)}
 					<ul>
 						{Object.keys(this.state.rooms).map(room => (
-							<li>
+							<li key={room}>
 								<Link to={`/rooms/${room}`}>{room}</Link>
 							</li>
 						))}

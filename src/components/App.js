@@ -15,7 +15,7 @@ class App extends Component {
 
 	componentDidMount() {
 		this.setState({
-			username: localStorage.getItem("username")
+			username: sessionStorage.getItem("username")
 		});
 
 		this.ref = base.syncState(
@@ -35,7 +35,7 @@ class App extends Component {
 		this.setState({
 			username: name
 		});
-		localStorage.setItem("username", name);
+		sessionStorage.setItem("username", name);
 	};
 
 	sendMessage = msg => {
