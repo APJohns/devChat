@@ -42,13 +42,14 @@ nav {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	display: flex;
-	align-items: baseline;
+	align-items: center;
 	background-color: rgba(52, 73, 94, 0.9);
 	color: #eee;
 	z-index: 10;
 
 	p {
 		margin-left: auto;
+		text-align: right;
 	}
 }
 
@@ -58,7 +59,8 @@ nav {
 	font-size: 1.6rem;
 	color: #eee;
 	width: 5%;
-	min-width: 100px;
+	min-width: 60px;
+	max-width: 100px;
 
 	img {
 		width: 100%;
