@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import NamePicker from "./NamePicker";
 import Messenger from "./Messenger";
 
+import logo from "../logo.png";
+
 class App extends Component {
 	state = {
 		username: null,
@@ -46,7 +48,7 @@ class App extends Component {
 			<>
 				<nav>
 					<Link to="/" className="logo">
-						Convo / Coffee
+						<img src={logo} alt="logo" />
 					</Link>
 					{this.state.username && (
 						<p>Welcome, {this.state.username}!</p>
