@@ -14,6 +14,10 @@ class App extends Component {
 	};
 
 	componentDidMount() {
+		this.setState({
+			username: localStorage.getItem("username")
+		});
+
 		this.ref = base.syncState(
 			`rooms/${this.props.match.params.roomId}/messages`,
 			{
@@ -31,6 +35,7 @@ class App extends Component {
 		this.setState({
 			username: name
 		});
+		localStorage.setItem("username", name);
 	};
 
 	sendMessage = msg => {
