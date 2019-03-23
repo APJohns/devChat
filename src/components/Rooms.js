@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import base from "../base";
 
+import logo from "../logo.png";
+
 function slugify(text) {
 	return text
 		.toString()
@@ -41,7 +43,7 @@ class Rooms extends React.Component {
 			<div>
 				<nav>
 					<Link to="/" className="logo">
-						Convo / Coffee
+						<img src={logo} alt="logo" />
 					</Link>
 				</nav>
 				<main>
